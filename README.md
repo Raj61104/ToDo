@@ -51,6 +51,10 @@ todo-list-app/
 ```
 
 ## 📸 Screenshots
+<img width="1903" height="856" alt="image" src="https://github.com/user-attachments/assets/4bb269dd-2a96-4e4b-a885-c63fa83dcbdb" />
+<img width="1905" height="863" alt="image" src="https://github.com/user-attachments/assets/956cb1a8-cd5d-495f-8cc0-635d8b934feb" />
+
+
 
 ## 🤝 Contributing
 Contributions are welcome! If you'd like to contribute to the Todo List App, please fork the repository and submit a pull request with your changes.
