@@ -26,13 +26,26 @@ const Item = ({ task, onToggle, onEdit, onDelete }) => {
         ✓
       </button>
       <div className="task-content">
-        <span className="task-text">{task.text}</span>
-        {task.isDaily && <span className="daily-badge">🔄</span>}
-        {task.deadline && <span className="deadline">Due: {new Date(task.deadline).toLocaleDateString()}</span>}
+        {isEditing ? (
+          <input
+            type="text"
+            value={editText}
+            onChange={(e) => setEditText(e.target.value)}
+            onKeyPress={handleKeyPress}
+            className="edit-input"
+            autoFocus
+          />
+        ) : (
+          <>
+            <span className="task-text">{task.text}</span>
+            {task.isDaily && <span className="daily-badge">🔄</span>}
+            {task.deadline && <span className="deadline">Due: {new Date(task.deadline).toLocaleDateString()}</span>}
+          </>
+        )}
       </div>
       <div className="task-actions">
-        <button onClick={handleEdit} className="edit-button" title="Edit">
-          Edit
+        <button onClick={handleEdit} className="edit-button" title={isEditing ? "Save" : "Edit"}>
+          {isEditing ? 'Save' : 'Edit'}
         </button>
         <button onClick={() => onDelete(task.id)} className="delete-button" title="Delete">
           Del
